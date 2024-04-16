@@ -8,7 +8,7 @@ ZONE_ID="52bxxxxxxxxxxxxxxxxxxd6c"
 RECORD_NAME="ddns.xxxxxxxxx.com"
 
 # Fetch current public IP
-CURRENT_IP=$(curl -s http://ifconfig.me)
+CURRENT_IP=$(curl -s -4 http://ifconfig.me)
 
 # Fetch DNS record details
 RECORD=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?type=A&name=$RECORD_NAME" \
